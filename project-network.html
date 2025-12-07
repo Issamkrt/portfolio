@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Setup - Issam Kirat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">Issam Kirat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-9">
+                    <a href="portfolio.html" class="back-link">← Terug naar portfolio</a>
+
+                    <header class="mb-4">
+                        <h1 class="project-detail-title">Bedrijfsnetwerk Setup met Cisco Packet Tracer</h1>
+                        <dl class="project-meta row">
+                            <dt class="col-sm-3">Datum:</dt>
+                            <dd class="col-sm-9">November 2024</dd>
+                            <dt class="col-sm-3">Categorie:</dt>
+                            <dd class="col-sm-9">Networking & Infrastructure</dd>
+                            <dt class="col-sm-3">Status:</dt>
+                            <dd class="col-sm-9">Voltooid</dd>
+                        </dl>
+                    </header>
+
+                    <figure class="project-detail-image mb-4">
+                        <img src="assets/images/project-2-hero.jpg" alt="Network Topology Diagram" class="img-fluid rounded">
+                    </figure>
+
+                    <section class="project-section">
+                        <h2>Over dit project</h2>
+                        <p>Voor dit project heb ik een compleet bedrijfsnetwerk ontworpen en geïmplementeerd in Cisco Packet Tracer. Het netwerk ondersteunt een kantoorpand van twee verdiepingen met werkstations, printers, VoIP telefoons en draadloze toegang. De opdracht vereiste een professionele rack-opstelling met redundantie en proper cable management.</p>
+                        <p>Het ontwerp omvat gesegmenteerde VLANs voor verschillende afdelingen, een dedicated server rack met file server en backup server, en een robuuste internetverbinding via een router met failover mogelijkheden.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Netwerkarchitectuur</h2>
+                        <p>Het netwerk is opgebouwd rond een hiërarchisch model met de volgende componenten:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>Core Layer:</strong> 48-poorts Gigabit switch (TP-Link TL-SG1048) als centrale verdeler</li>
+                            <li class="mb-2"><strong>Access Layer:</strong> 24-poorts switch (TP-Link TL-SG1024) voor eerste verdieping</li>
+                            <li class="mb-2"><strong>Router:</strong> ASUS RT-AX53U voor internet en inter-VLAN routing</li>
+                            <li class="mb-2"><strong>Wireless:</strong> 3x Mikrotik wAP ax WiFi6 access points</li>
+                            <li class="mb-2"><strong>Servers:</strong> File server en backup server in 12U rack</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Gebruikte Technologieën</h2>
+                        <ul class="tech-tags list-unstyled d-flex flex-wrap gap-2">
+                            <li class="tech-tag">Cisco Packet Tracer</li>
+                            <li class="tech-tag">VLANs</li>
+                            <li class="tech-tag">Subnetting</li>
+                            <li class="tech-tag">STP</li>
+                            <li class="tech-tag">DHCP</li>
+                            <li class="tech-tag">VoIP</li>
+                            <li class="tech-tag">WiFi6</li>
+                            <li class="tech-tag">Cat6A</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Rack Layout</h2>
+                        <p>De 12U rack is als volgt ingedeeld:</p>
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Positie</th>
+                                    <th>Component</th>
+                                    <th>Beschrijving</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1U</td>
+                                    <td>Cable Management Panel</td>
+                                    <td>Kabelgeleiding boven patchpanelen</td>
+                                </tr>
+                                <tr>
+                                    <td>2U</td>
+                                    <td>Patchpanel 1</td>
+                                    <td>Aansluitingen gelijkvloers</td>
+                                </tr>
+                                <tr>
+                                    <td>3U</td>
+                                    <td>Patchpanel 2</td>
+                                    <td>Aansluitingen eerste verdieping</td>
+                                </tr>
+                                <tr>
+                                    <td>4U</td>
+                                    <td>Patchpanel 3</td>
+                                    <td>Printers + Access Points</td>
+                                </tr>
+                                <tr>
+                                    <td>5U</td>
+                                    <td>Cable Management Panel</td>
+                                    <td>Kabelgeleiding onder patchpanelen</td>
+                                </tr>
+                                <tr>
+                                    <td>6U</td>
+                                    <td>Core Switch (48-poorts)</td>
+                                    <td>Hoofdswitch voor alle bekabelde verbindingen</td>
+                                </tr>
+                                <tr>
+                                    <td>7U</td>
+                                    <td>Access Switch (24-poorts)</td>
+                                    <td>Switch voor uplink naar verdieping</td>
+                                </tr>
+                                <tr>
+                                    <td>8-9U</td>
+                                    <td>File Server</td>
+                                    <td>Rackmount 2U server</td>
+                                </tr>
+                                <tr>
+                                    <td>10-11U</td>
+                                    <td>Backup Server</td>
+                                    <td>Rackmount 2U server</td>
+                                </tr>
+                                <tr>
+                                    <td>12U</td>
+                                    <td>Router</td>
+                                    <td>Verbindt netwerk met internetprovider</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Uitdagingen & Oplossingen</h2>
+                        <p><strong>VLAN Segmentatie:</strong> Het scheiden van verschillende afdelingen en device types vereiste zorgvuldige planning. Ik heb elk departement een eigen VLAN toegewezen met inter-VLAN routing via de router voor gecontroleerde communicatie tussen segmenten.</p>
+                        <p><strong>VoIP Implementatie:</strong> Het integreren van 24 VoIP telefoons vereiste een dedicated voice VLAN met QoS instellingen om voice traffic prioriteit te geven boven data traffic.</p>
+                        <p><strong>Redundantie:</strong> Door Spanning Tree Protocol (STP) te configureren op de switches wordt loop prevention gegarandeerd, terwijl de backup server automatische failover biedt voor de file server.</p>
+                        <p><strong>Schaalbaarheid:</strong> Het netwerk is ontworpen met toekomstige uitbreiding in gedachten. De 48-poorts core switch heeft voldoende vrije poorten en het IP schema biedt ruimte voor groei.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Budget Overzicht</h2>
+                        <p>Het totale projectbudget bedroeg <strong>€16.734,65</strong> en omvatte:</p>
+                        <ul>
+                            <li>24 Desktop PC's: €8.376</li>
+                            <li>24 VoIP Telefoons: €3.000</li>
+                            <li>Servers (File + Backup): €3.022,40</li>
+                            <li>Netwerk apparatuur: €1.216,25</li>
+                            <li>Bekabeling en rack: €1.120</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Screenshots</h2>
+                        <div class="row g-3">
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-2-screen1.jpg" alt="Network topology overview" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Volledige netwerk topologie</figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-2-screen2.jpg" alt="Switch configuration" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Switch VLAN configuratie</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Resultaat</h2>
+                        <p>Het netwerk functioneert stabiel en ondersteunt alle vereiste diensten. Alle 24 werkstations hebben betrouwbare bekabelde connectiviteit, de VoIP telefoons werken zonder packet loss, en de wireless access points bieden volledige dekking over beide verdiepingen.</p>
+                        <p>Het project demonstreert praktische kennis van netwerk design principes, VLAN segmentatie, proper cabling standards en enterprise-grade infrastructuur planning.</p>
+                        <p class="mt-3">
+                            <a href="assets/files/network-topology.pkt" class="btn btn-primary-custom me-2">Download Packet Tracer File</a>
+                            <a href="assets/files/network-documentation.pdf" class="btn btn-outline-primary-custom">Documentatie (PDF)</a>
+                        </p>
+                    </section>
+
+                    <nav class="project-navigation d-flex justify-content-between">
+                        <a href="project.html" class="nav-project">← Payout Service</a>
+                        <a href="project-backup.html" class="nav-project">Backup Script →</a>
+                    </nav>
+                </article>
+
+                <aside class="col-md-3">
+                    <section class="contact-sidebar p-4 bg-light rounded">
+                        <h2 class="h5 text-primary-custom mb-3">Contact</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:issamkrt@gmail.com">issamkrt@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <strong>LinkedIn:</strong><br>
+                                <a href="https://linkedin.com/in/issamkirat" target="_blank" rel="noopener">linkedin.com/in/issamkirat</a>
+                            </li>
+                        </ul>
+                        <nav class="social-icons mt-3">
+                            <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                            <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                            <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                        </nav>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-6 mb-3 mb-md-0">
+                    <h3 class="h5 text-primary-custom">Contact</h3>
+                    <p class="mb-1">issamkrt@gmail.com</p>
+                    <p class="mb-2">linkedin.com/in/issamkirat</p>
+                    <nav class="social-icons">
+                        <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                        <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                    </nav>
+                </section>
+                <section class="col-md-6">
+                    <h3 class="h5 text-primary-custom">Over deze site</h3>
+                    <p class="mb-0">© 2025 Issam Kirat</p>
+                </section>
+            </div>
+            <hr class="my-3">
+            <p class="text-center mb-0">© 2025 Issam Kirat. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

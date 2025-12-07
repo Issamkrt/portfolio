@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMware Windows Server Automation - Issam Kirat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">Issam Kirat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-9">
+                    <a href="portfolio.html" class="back-link">← Terug naar portfolio</a>
+
+                    <header class="mb-4">
+                        <h1 class="project-detail-title">VMware Windows Server Automation</h1>
+                        <span class="badge bg-warning text-dark fs-6 mb-3">Coming Soon - In Ontwikkeling</span>
+                        <dl class="project-meta row">
+                            <dt class="col-sm-3">Verwachte Datum:</dt>
+                            <dd class="col-sm-9">Q1 2025</dd>
+                            <dt class="col-sm-3">Categorie:</dt>
+                            <dd class="col-sm-9">Infrastructure Automation</dd>
+                            <dt class="col-sm-3">Status:</dt>
+                            <dd class="col-sm-9">In ontwikkeling (70% compleet)</dd>
+                        </dl>
+                    </header>
+
+                    <figure class="project-detail-image mb-4 position-relative">
+                        <img src="assets/images/project-vmware-hero.jpg" alt="VMware Automation Concept" class="img-fluid rounded">
+                        <span class="position-absolute top-50 start-50 translate-middle badge bg-warning text-dark fs-4 px-4 py-2">Preview</span>
+                    </figure>
+
+                    <section class="project-section">
+                        <h2>Project Overzicht</h2>
+                        <p>Dit project is een ambitieuze poging om het volledige proces van Windows Server deployment te automatiseren binnen VMware omgevingen. Het doel is om met één commando een volledig geconfigureerde Windows Server VM te kunnen deployen, inclusief alle basis configuraties, updates, en security hardening.</p>
+                        <p>Het systeem combineert Bash scripts voor Linux orchestration, Python voor VMware API interactie, PowerShell voor Windows configuratie, en Ansible voor configuration management. Het resultaat is een één-klik deployment oplossing die uren handmatig werk bespaart.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Geplande Functionaliteiten</h2>
+                        <ul>
+                            <li><strong>VM Provisioning:</strong> Automatisch aanmaken van VMware VM met custom specs (CPU, RAM, Storage)</li>
+                            <li><strong>OS Installation:</strong> Unattended Windows Server installation via ISO mount en answer file</li>
+                            <li><strong>Network Configuration:</strong> Static IP, DNS, gateway configuratie via PowerShell</li>
+                            <li><strong>Domain Join:</strong> Automatisch joinen aan Active Directory domain</li>
+                            <li><strong>Windows Updates:</strong> Download en installeer alle critical updates</li>
+                            <li><strong>Security Hardening:</strong> Implement CIS benchmarks en security best practices</li>
+                            <li><strong>Role Installation:</strong> Deploy specific server roles (File Server, Web Server, etc.)</li>
+                            <li><strong>Monitoring Setup:</strong> Installeer monitoring agents (Zabbix, Prometheus)</li>
+                            <li><strong>Backup Configuration:</strong> Setup automatische backups via Veeam/native tools</li>
+                            <li><strong>Documentation:</strong> Genereer deployment rapport met alle configuratie details</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technologie Stack</h2>
+                        <ul class="tech-tags list-unstyled d-flex flex-wrap gap-2">
+                            <li class="tech-tag">Python 3.10</li>
+                            <li class="tech-tag">Bash</li>
+                            <li class="tech-tag">PowerShell</li>
+                            <li class="tech-tag">Ansible</li>
+                            <li class="tech-tag">VMware vSphere API</li>
+                            <li class="tech-tag">pyVmomi</li>
+                            <li class="tech-tag">Windows Server 2022</li>
+                            <li class="tech-tag">Linux (Ubuntu/RHEL)</li>
+                            <li class="tech-tag">YAML</li>
+                            <li class="tech-tag">Jinja2</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Geplande Architectuur</h2>
+                        <pre class="bg-light p-3 rounded"><code>vmware-automation/
+├── orchestrator.py          # Main orchestration script
+├── vmware/
+│   ├── vm_creator.py       # VMware VM provisioning
+│   ├── iso_manager.py      # ISO mounting and management
+│   └── snapshot.py         # Snapshot functionality
+├── windows/
+│   ├── unattend.xml        # Windows answer file template
+│   ├── post_install.ps1   # Post-installation PowerShell
+│   └── hardening.ps1      # Security hardening script
+├── ansible/
+│   ├── playbooks/
+│   │   ├── domain_join.yml
+│   │   ├── updates.yml
+│   │   └── roles_install.yml
+│   └── inventory/
+│       └── hosts.ini
+├── config/
+│   ├── vm_specs.yaml       # VM specifications
+│   ├── network.yaml        # Network configuration
+│   └── credentials.yaml    # Encrypted credentials
+└── utils/
+    ├── logger.py           # Logging utility
+    ├── validator.py        # Configuration validation
+    └── reporter.py         # Documentation generator</code></pre>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Workflow</h2>
+                        <ol>
+                            <li><strong>Pre-flight Checks:</strong> Valideer VMware connectivity, beschikbare resources, ISO availability</li>
+                            <li><strong>VM Creation:</strong> Create VM shell in vSphere met specified specs</li>
+                            <li><strong>OS Installation:</strong> Mount Windows Server ISO, attach unattend.xml, start installation</li>
+                            <li><strong>Wait for Completion:</strong> Monitor VM state, wacht op eerste boot</li>
+                            <li><strong>Network Setup:</strong> Configure static IP, DNS via PowerShell remoting</li>
+                            <li><strong>Domain Operations:</strong> Join AD domain indien geconfigureerd</li>
+                            <li><strong>Updates & Patches:</strong> Run Windows Update cycles tot alle updates installed</li>
+                            <li><strong>Security Hardening:</strong> Apply CIS benchmarks, disable unnecessary services</li>
+                            <li><strong>Role Configuration:</strong> Install en configure requested server roles</li>
+                            <li><strong>Finalization:</strong> Take clean snapshot, genereer documentatie, cleanup</li>
+                        </ol>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Configuratie Voorbeeld</h2>
+                        <pre class="bg-light p-3 rounded"><code>vm_config:
+  name: "PROD-WEB-01"
+  template: "windows-server-2022"
+  datacenter: "DC-Brussels"
+  cluster: "Production"
+  datastore: "VMFS-SSD-01"
+  
+  hardware:
+    cpu: 4
+    memory: 8192  # MB
+    disk: 120     # GB
+    network: "VLAN-100-Production"
+  
+  network:
+    ip: "192.168.100.50"
+    netmask: "255.255.255.0"
+    gateway: "192.168.100.1"
+    dns: ["192.168.100.10", "192.168.100.11"]
+  
+  windows:
+    computer_name: "PROD-WEB-01"
+    domain: "company.local"
+    timezone: "Romance Standard Time"
+    
+  roles:
+    - "Web-Server"
+    - "NET-Framework-45-Core"
+    
+  security:
+    apply_cis_benchmarks: true
+    disable_rdp: false
+    enable_firewall: true
+    
+  post_install:
+    install_updates: true
+    join_domain: true
+    install_monitoring: true
+    create_snapshot: true</code></pre>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Huidige Vooruitgang</h2>
+                        <p>Het project is momenteel 70% voltooid. Wat al werkt:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✅ VMware API connectivity en authenticatie</li>
+                            <li class="mb-2">✅ VM provisioning met custom specs</li>
+                            <li class="mb-2">✅ ISO mounting en unattended installation</li>
+                            <li class="mb-2">✅ Basic network configuration via PowerShell</li>
+                            <li class="mb-2">✅ Windows Update automation</li>
+                            <li class="mb-2">⏳ Domain join (in testing)</li>
+                            <li class="mb-2">⏳ Security hardening scripts (80% klaar)</li>
+                            <li class="mb-2">❌ Role-specific configuration (nog te doen)</li>
+                            <li class="mb-2">❌ Monitoring agent deployment (nog te doen)</li>
+                            <li class="mb-2">❌ Documentation generator (nog te doen)</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Uitdagingen</h2>
+                        <p><strong>Timing Issues:</strong> Windows installatie neemt tijd, moeilijk om exact te weten wanneer OS klaar is. Working on: intelligent polling met retry logic.</p>
+                        <p><strong>Credential Management:</strong> Veilig omgaan met credentials voor VMware, Windows, AD. Solution: encrypted vault met ansible-vault.</p>
+                        <p><strong>Error Recovery:</strong> Wat als een stap faalt halfway? Need: proper rollback mechanism en cleanup procedures.</p>
+                        <p><strong>Testing:</strong> Elke test run kost 30-60 minuten. Working on: snapshot-based rapid testing.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Use Cases</h2>
+                        <ul>
+                            <li><strong>Development Environments:</strong> Snel test servers deployen voor developers</li>
+                            <li><strong>DR Scenarios:</strong> Rapid deployment bij disaster recovery situaties</li>
+                            <li><strong>Lab Automation:</strong> Test labs opzetten voor training of certificering</li>
+                            <li><strong>Standardization:</strong> Consistente server builds volgens company standards</li>
+                            <li><strong>CI/CD Integration:</strong> Automated infrastructure voor continuous deployment</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Verwachte Resultaat</h2>
+                        <p>Wanneer compleet zal dit systeem een Windows Server deployment van 2-3 uur handmatig werk terugbrengen naar 15-20 minuten geautomatiseerd proces. Het elimineert menselijke fouten, garandeert consistente configuraties, en maakt documentatie automatisch.</p>
+                        <p>De tool zal beschikbaar komen als open-source project op GitHub zodra alle functionaliteit stabiel is en goed getest.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Screenshots</h2>
+                        <div class="row g-3">
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-vmware-screen1.jpg" alt="Terminal output preview" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Terminal output tijdens deployment</figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-vmware-screen2.jpg" alt="Configuration file" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">YAML configuratie bestand</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Blijf op de Hoogte</h2>
+                        <p>Geïnteresseerd in dit project? Volg de ontwikkeling op GitHub (link komt beschikbaar bij release) of neem contact met me op voor meer informatie. Verwachte release: begin 2025.</p>
+                        <p class="mt-3">
+                            <a href="contact.html" class="btn btn-primary-custom me-2">Blijf Geïnformeerd</a>
+                            <a href="#" class="btn btn-outline-secondary disabled">GitHub (Binnenkort)</a>
+                        </p>
+                    </section>
+
+                    <nav class="project-navigation d-flex justify-content-between">
+                        <a href="project-portfolio.html" class="nav-project">← Portfolio Website</a>
+                        <a href="project-security.html" class="nav-project">Security Audit →</a>
+                    </nav>
+                </article>
+
+                <aside class="col-md-3">
+                    <section class="contact-sidebar p-4 bg-light rounded">
+                        <h2 class="h5 text-primary-custom mb-3">Contact</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:issamkrt@gmail.com">issamkrt@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <strong>LinkedIn:</strong><br>
+                                <a href="https://linkedin.com/in/issamkirat" target="_blank" rel="noopener">linkedin.com/in/issamkirat</a>
+                            </li>
+                        </ul>
+                        <nav class="social-icons mt-3">
+                            <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                            <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                            <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                        </nav>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-6 mb-3 mb-md-0">
+                    <h3 class="h5 text-primary-custom">Contact</h3>
+                    <p class="mb-1">issamkrt@gmail.com</p>
+                    <p class="mb-2">linkedin.com/in/issamkirat</p>
+                    <nav class="social-icons">
+                        <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                        <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                    </nav>
+                </section>
+                <section class="col-md-6">
+                    <h3 class="h5 text-primary-custom">Over deze site</h3>
+                    <p class="mb-0">© 2025 Issam Kirat</p>
+                </section>
+            </div>
+            <hr class="my-3">
+            <p class="text-center mb-0">© 2025 Issam Kirat. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,6 @@ body {
     color: #333;
 }
 
-/* Color Palette */
 :root {
     --primary-color: #F24F13;
     --primary-light: #F26430;
@@ -21,7 +19,6 @@ body {
     --text-muted: #587e8c;
 }
 
-/* Custom Color Classes */
 .text-primary-custom {
     color: var(--primary-color) !important;
 }
@@ -57,7 +54,6 @@ body {
     color: white;
 }
 
-/* Navigation */
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -78,7 +74,6 @@ body {
     color: var(--primary-color) !important;
 }
 
-/* Hero Section */
 .hero-section {
     min-height: 400px;
 }
@@ -92,14 +87,12 @@ body {
     justify-content: center;
 }
 
-/* Section Titles */
 .section-title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
 }
 
-/* About Section */
 .profile-photo {
     width: 200px;
     height: 200px;
@@ -107,7 +100,6 @@ body {
     margin: 0 auto;
 }
 
-/* Project Cards */
 .project-card {
     background: white;
     border: 2px solid #e0e0e0;
@@ -196,7 +188,6 @@ span.required {
     color: red;
 }
 
-/* Contact Info Items */
 .contact-item {
     margin-bottom: 1.5rem;
 }
@@ -213,7 +204,6 @@ span.required {
     margin-bottom: 0;
 }
 
-/* Project Detail Page */
 .back-link {
     color: var(--primary-color);
     text-decoration: none;

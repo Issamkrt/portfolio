@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Script - Issam Kirat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">Issam Kirat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-9">
+                    <a href="portfolio.html" class="back-link">← Terug naar portfolio</a>
+
+                    <header class="mb-4">
+                        <h1 class="project-detail-title">Geautomatiseerd Backup Systeem</h1>
+                        <dl class="project-meta row">
+                            <dt class="col-sm-3">Datum:</dt>
+                            <dd class="col-sm-9">Oktober 2024</dd>
+                            <dt class="col-sm-3">Categorie:</dt>
+                            <dd class="col-sm-9">Automation & Scripting</dd>
+                            <dt class="col-sm-3">Status:</dt>
+                            <dd class="col-sm-9">In productie</dd>
+                        </dl>
+                    </header>
+
+                    <figure class="project-detail-image mb-4">
+                        <img src="assets/images/project-3-hero.jpg" alt="Backup Script Interface" class="img-fluid rounded">
+                    </figure>
+
+                    <section class="project-section">
+                        <h2>Over dit project</h2>
+                        <p>Dit Python-gebaseerde backup systeem automatiseert het volledige backup proces voor server infrastructuur. Het script maakt incrementele backups, comprimeert data, en uploadt alles naar remote storage locaties met uitgebreide error handling en logging.</p>
+                        <p>Het systeem ondersteunt multiple backup strategies (full, incremental, differential), automatische retentie policies, en stuurt notificaties bij succes of falen van backup jobs.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Kernfunctionaliteiten</h2>
+                        <ul>
+                            <li><strong>Incrementele Backups:</strong> Alleen gewijzigde bestanden worden gebackupt om bandbreedte en storage te besparen</li>
+                            <li><strong>Compressie:</strong> Automatische gzip compressie vermindert storage requirements met 60-70%</li>
+                            <li><strong>Encryption:</strong> AES-256 encryptie voor alle backup data tijdens transport en opslag</li>
+                            <li><strong>Scheduling:</strong> Cron integration voor automatische dagelijkse, wekelijkse en maandelijkse backups</li>
+                            <li><strong>Retention Policy:</strong> Automatisch verwijderen van oude backups volgens configureerbare regels</li>
+                            <li><strong>Multi-Destination:</strong> Simultaan uploaden naar lokale storage, NAS en cloud (AWS S3, Azure Blob)</li>
+                            <li><strong>Monitoring:</strong> Real-time logging en email/Slack notificaties bij problemen</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Gebruikte Technologieën</h2>
+                        <ul class="tech-tags list-unstyled d-flex flex-wrap gap-2">
+                            <li class="tech-tag">Python 3.10</li>
+                            <li class="tech-tag">rsync</li>
+                            <li class="tech-tag">Boto3 (AWS)</li>
+                            <li class="tech-tag">paramiko (SSH)</li>
+                            <li class="tech-tag">Cron</li>
+                            <li class="tech-tag">systemd</li>
+                            <li class="tech-tag">GPG</li>
+                            <li class="tech-tag">MySQL</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Architectuur</h2>
+                        <p>Het systeem bestaat uit meerdere componenten:</p>
+                        <pre class="bg-light p-3 rounded"><code>backup_system/
+├── core/
+│   ├── backup_engine.py      # Hoofdlogica voor backup operaties
+│   ├── compression.py         # Compressie handlers
+│   └── encryption.py          # Encryptie functies
+├── destinations/
+│   ├── local_storage.py       # Lokale disk backups
+│   ├── s3_uploader.py         # AWS S3 integration
+│   └── azure_uploader.py      # Azure Blob integration
+├── monitoring/
+│   ├── logger.py              # Centralized logging
+│   └── notifier.py            # Email/Slack alerts
+├── config/
+│   └── backup_config.yaml     # Configuratie bestand
+└── backup_scheduler.py        # Cron job manager</code></pre>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Configuratie Voorbeeld</h2>
+                        <pre class="bg-light p-3 rounded"><code>backup_jobs:
+  - name: "database_backup"
+    type: "incremental"
+    source: "/var/lib/mysql"
+    destinations:
+      - "local:/backups/mysql"
+      - "s3://my-bucket/mysql-backups"
+    schedule: "0 2 * * *"  # Daily at 2 AM
+    retention:
+      daily: 7
+      weekly: 4
+      monthly: 12
+    compression: true
+    encryption: true
+    
+  - name: "web_files_backup"
+    type: "differential"
+    source: "/var/www"
+    destinations:
+      - "local:/backups/web"
+      - "azure://container/web-backups"
+    schedule: "0 3 * * *"
+    retention:
+      daily: 14
+    compression: true</code></pre>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Uitdagingen & Oplossingen</h2>
+                        <p><strong>Grote Datasets:</strong> Bij grote databases (50GB+) duurden volledige backups te lang. Opgelost door incrementele backups te implementeren die alleen delta's opslaan.</p>
+                        <p><strong>Network Failures:</strong> Upload naar cloud storage faalde soms door netwerk instabiliteit. Implementeerde retry logic met exponential backoff en resume capability.</p>
+                        <p><strong>Resource Gebruik:</strong> Backups beïnvloedden server performance. Opgelost door nice/ionice prioriteit te verlagen en I/O throttling toe te voegen.</p>
+                        <p><strong>Verification:</strong> Geen garantie dat backups herstelbaar waren. Toegevoegd: automatische restore tests op testserver elke week.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Performance Metrics</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Voor Optimalisatie</th>
+                                    <th>Na Optimalisatie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Backup Tijd (50GB database)</td>
+                                    <td>~3 uur</td>
+                                    <td>~25 minuten (incremental)</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage Gebruik</td>
+                                    <td>500GB/maand</td>
+                                    <td>180GB/maand (compression)</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Bandwidth</td>
+                                    <td>~8GB upload/dag</td>
+                                    <td>~2GB upload/dag</td>
+                                </tr>
+                                <tr>
+                                    <td>CPU Impact</td>
+                                    <td>40-60% tijdens backup</td>
+                                    <td>5-10% (nice priority)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Screenshots</h2>
+                        <div class="row g-3">
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-3-screen1.jpg" alt="Backup dashboard" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Web dashboard met backup status</figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-3-screen2.jpg" alt="Log output" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Detailed logging output</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Resultaat</h2>
+                        <p>Het backup systeem draait nu stabiel in productie en heeft al meerdere keren zijn waarde bewezen bij data recovery scenarios. Het heeft downtime voorkomen na een hardware failure en een ransomware incident.</p>
+                        <p>De automatisering bespaart wekelijks 5+ uur handmatig werk en de monitoring functionaliteit geeft peace of mind dat critical data beschermd is.</p>
+                        <p class="mt-3">
+                            <a href="https://github.com/issamkrt/backup-automation" class="btn btn-primary-custom me-2" target="_blank" rel="noopener">View on GitHub</a>
+                            <a href="assets/files/backup-documentation.pdf" class="btn btn-outline-primary-custom">Documentatie</a>
+                        </p>
+                    </section>
+
+                    <nav class="project-navigation d-flex justify-content-between">
+                        <a href="project-network.html" class="nav-project">← Network Setup</a>
+                        <a href="project-portfolio.html" class="nav-project">Portfolio Website →</a>
+                    </nav>
+                </article>
+
+                <aside class="col-md-3">
+                    <section class="contact-sidebar p-4 bg-light rounded">
+                        <h2 class="h5 text-primary-custom mb-3">Contact</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:issamkrt@gmail.com">issamkrt@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <strong>LinkedIn:</strong><br>
+                                <a href="https://linkedin.com/in/issamkirat" target="_blank" rel="noopener">linkedin.com/in/issamkirat</a>
+                            </li>
+                        </ul>
+                        <nav class="social-icons mt-3">
+                            <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                            <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                            <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                        </nav>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-6 mb-3 mb-md-0">
+                    <h3 class="h5 text-primary-custom">Contact</h3>
+                    <p class="mb-1">issamkrt@gmail.com</p>
+                    <p class="mb-2">linkedin.com/in/issamkirat</p>
+                    <nav class="social-icons">
+                        <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                        <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                    </nav>
+                </section>
+                <section class="col-md-6">
+                    <h3 class="h5 text-primary-custom">Over deze site</h3>
+                    <p class="mb-0">© 2025 Issam Kirat</p>
+                </section>
+            </div>
+            <hr class="my-3">
+            <p class="text-center mb-0">© 2025 Issam Kirat. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

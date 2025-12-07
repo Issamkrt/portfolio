@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Audit - Issam Kirat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">Issam Kirat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-9">
+                    <a href="portfolio.html" class="back-link">← Terug naar portfolio</a>
+
+                    <header class="mb-4">
+                        <h1 class="project-detail-title">Security Audit & Penetration Test</h1>
+                        <dl class="project-meta row">
+                            <dt class="col-sm-3">Datum:</dt>
+                            <dd class="col-sm-9">Augustus 2024</dd>
+                            <dt class="col-sm-3">Categorie:</dt>
+                            <dd class="col-sm-9">Cybersecurity</dd>
+                            <dt class="col-sm-3">Status:</dt>
+                            <dd class="col-sm-9">Voltooid</dd>
+                        </dl>
+                    </header>
+
+                    <figure class="project-detail-image mb-4">
+                        <img src="assets/images/project-6-hero.jpg" alt="Security Audit Dashboard" class="img-fluid rounded">
+                    </figure>
+
+                    <section class="project-section">
+                        <h2>Over dit project</h2>
+                        <p>Voor een school opdracht heb ik een uitgebreide security audit uitgevoerd op een test netwerk infrastructuur. Het doel was om kwetsbaarheden te identificeren, risico's te beoordelen, en concrete aanbevelingen te geven voor security verbeteringen.</p>
+                        <p>De audit omvatte network scanning, vulnerability assessment, password auditing, social engineering tests, en physical security evaluation. Alle bevindingen zijn gedocumenteerd in een professioneel rapport met executive summary voor management en technische details voor IT teams.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Scope & Methodologie</h2>
+                        <p>De audit volgde de OWASP Testing Guide en NIST Cybersecurity Framework methodologie:</p>
+                        <ul>
+                            <li><strong>Information Gathering:</strong> Passive en active reconnaissance van de target infrastructuur</li>
+                            <li><strong>Vulnerability Scanning:</strong> Automated scanning met Nmap, Nessus, en OpenVAS</li>
+                            <li><strong>Manual Testing:</strong> Handmatige verification en exploitation van gevonden kwetsbaarheden</li>
+                            <li><strong>Password Auditing:</strong> Strength testing van user accounts met John the Ripper</li>
+                            <li><strong>Social Engineering:</strong> Phishing awareness testing (met toestemming)</li>
+                            <li><strong>Reporting:</strong> Comprehensive rapport met risk ratings en remediation steps</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Gebruikte Tools</h2>
+                        <ul class="tech-tags list-unstyled d-flex flex-wrap gap-2">
+                            <li class="tech-tag">Kali Linux</li>
+                            <li class="tech-tag">Nmap</li>
+                            <li class="tech-tag">Nessus</li>
+                            <li class="tech-tag">Metasploit</li>
+                            <li class="tech-tag">Burp Suite</li>
+                            <li class="tech-tag">Wireshark</li>
+                            <li class="tech-tag">John the Ripper</li>
+                            <li class="tech-tag">Hydra</li>
+                            <li class="tech-tag">Nikto</li>
+                            <li class="tech-tag">SQLMap</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Belangrijkste Bevindingen</h2>
+                        
+                        <article class="mb-4">
+                            <h3 class="h5 text-danger">Critical - Ongepatched Server</h3>
+                            <p><strong>Beschrijving:</strong> File server draait Windows Server 2016 zonder security updates sinds 2023. Kwetsbaar voor meerdere known exploits including EternalBlue.</p>
+                            <p><strong>Impact:</strong> Remote code execution mogelijk, potentieel voor ransomware infection en lateral movement.</p>
+                            <p><strong>Aanbeveling:</strong> Onmiddellijk patchen naar laatste security updates. Implement automated patch management.</p>
+                        </article>
+
+                        <article class="mb-4">
+                            <h3 class="h5 text-danger">Critical - Zwakke Wachtwoorden</h3>
+                            <p><strong>Beschrijving:</strong> 35% van user accounts gebruikt weak passwords (onder 8 characters, geen special characters). Meerdere accounts gebruiken "Password123".</p>
+                            <p><strong>Impact:</strong> Brute force attacks succesvol binnen minuten. Unauthorized access tot company resources.</p>
+                            <p><strong>Aanbeveling:</strong> Enforce strong password policy (min 12 chars, complexity requirements). Implement multi-factor authentication.</p>
+                        </article>
+
+                        <article class="mb-4">
+                            <h3 class="h5 text-warning">High - Open RDP naar Internet</h3>
+                            <p><strong>Beschrijving:</strong> Remote Desktop Protocol (port 3389) is direct accessible vanaf internet zonder VPN requirement.</p>
+                            <p><strong>Impact:</strong> Constant brute force attacks, verhoogd risico op unauthorized access.</p>
+                            <p><strong>Aanbeveling:</strong> Disable direct RDP access. Require VPN connection of implement jump server met MFA.</p>
+                        </article>
+
+                        <article class="mb-4">
+                            <h3 class="h5 text-warning">High - Unencrypted Backup Data</h3>
+                            <p><strong>Beschrijving:</strong> Network backups worden opgeslagen zonder encryption op shared NAS.</p>
+                            <p><strong>Impact:</strong> Als attacker toegang krijgt tot netwerk, zijn alle backups leesbaar. Data breach risk.</p>
+                            <p><strong>Aanbeveling:</strong> Encrypt all backup data at rest en in transit. Implement access controls op backup storage.</p>
+                        </article>
+
+                        <article class="mb-4">
+                            <h3 class="h5 text-info">Medium - Insufficient Logging</h3>
+                            <p><strong>Beschrijving:</strong> Security event logging is niet gecentraliseerd. Log retention is maar 7 dagen.</p>
+                            <p><strong>Impact:</strong> Moeilijk om security incidents te detecteren of forensics te doen na breach.</p>
+                            <p><strong>Aanbeveling:</strong> Implement SIEM solution voor centralized logging. Extend retention naar minimum 90 dagen.</p>
+                        </article>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Risk Assessment Matrix</h2>
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Severity</th>
+                                    <th>Aantal</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-danger">
+                                    <td><strong>Critical</strong></td>
+                                    <td>3</td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr class="table-warning">
+                                    <td><strong>High</strong></td>
+                                    <td>7</td>
+                                    <td>35%</td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td><strong>Medium</strong></td>
+                                    <td>8</td>
+                                    <td>40%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Low</strong></td>
+                                    <td>2</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr class="table-light">
+                                    <td><strong>Totaal</strong></td>
+                                    <td><strong>20</strong></td>
+                                    <td><strong>100%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Social Engineering Test</h2>
+                        <p>Met toestemming van school management heb ik een phishing simulation uitgevoerd:</p>
+                        <ul>
+                            <li>Email verstuurd naar 50 docenten/studenten met fake "password reset" link</li>
+                            <li>18 personen (36%) klikten op de link</li>
+                            <li>7 personen (14%) vulden daadwerkelijk credentials in op fake login page</li>
+                        </ul>
+                        <p><strong>Conclusie:</strong> Awareness training is hard nodig. Users zijn kwetsbaar voor social engineering attacks.</p>
+                        <p><strong>Aanbeveling:</strong> Quarterly security awareness training met focus op phishing recognition. Implement email filtering met anti-phishing features.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Recommended Security Controls</h2>
+                        <ol>
+                            <li><strong>Patch Management:</strong> Implement automated patching voor alle systems (WSUS/SCCM)</li>
+                            <li><strong>Identity & Access:</strong> Deploy MFA voor alle remote access en admin accounts</li>
+                            <li><strong>Network Segmentation:</strong> Implement VLANs om server segment te isoleren</li>
+                            <li><strong>Endpoint Protection:</strong> Deploy EDR solution op alle workstations en servers</li>
+                            <li><strong>Backup Security:</strong> Encrypt backups, test restore procedures quarterly</li>
+                            <li><strong>SIEM Implementation:</strong> Centralize logging voor security monitoring</li>
+                            <li><strong>Security Awareness:</strong> Quarterly training voor alle users</li>
+                            <li><strong>Incident Response:</strong> Develop en test incident response playbooks</li>
+                            <li><strong>Regular Audits:</strong> Schedule quarterly vulnerability scans</li>
+                            <li><strong>Physical Security:</strong> Implement badge access voor server room</li>
+                        </ol>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Implementation Roadmap</h2>
+                        <p><strong>Week 1-2 (Immediate):</strong></p>
+                        <ul>
+                            <li>Patch alle critical vulnerabilities</li>
+                            <li>Enforce strong password policy</li>
+                            <li>Disable direct RDP access</li>
+                        </ul>
+
+                        <p><strong>Month 1 (Short-term):</strong></p>
+                        <ul>
+                            <li>Deploy MFA solution</li>
+                            <li>Implement network segmentation</li>
+                            <li>Setup centralized logging</li>
+                            <li>Conduct security awareness training</li>
+                        </ul>
+
+                        <p><strong>Quarter 1 (Medium-term):</strong></p>
+                        <ul>
+                            <li>Deploy EDR solution</li>
+                            <li>Implement SIEM</li>
+                            <li>Develop incident response plan</li>
+                            <li>Encrypt backup infrastructure</li>
+                        </ul>
+
+                        <p><strong>Year 1 (Long-term):</strong></p>
+                        <ul>
+                            <li>Establish security operations center (SOC)</li>
+                            <li>Implement continuous monitoring</li>
+                            <li>Regular penetration testing (quarterly)</li>
+                            <li>Achieve compliance certification (ISO 27001)</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Lessons Learned</h2>
+                        <p>Dit project heeft me veel geleerd over real-world security challenges. Technische controls zijn belangrijk, maar human factor is vaak de weakest link. Comprehensive security requires: technology, processes, én people awareness.</p>
+                        <p>Het schrijven van het audit rapport was een waardevolle ervaring in security communication - technische details moeten vertaald worden naar business impact voor management.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Screenshots</h2>
+                        <div class="row g-3">
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-6-screen1.jpg" alt="Nmap scan results" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Network scan resultaten</figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-6-screen2.jpg" alt="Vulnerability report" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Vulnerability assessment rapport</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Resultaat</h2>
+                        <p>Het audit rapport werd goed ontvangen door de opdrachtgever. Binnen een maand waren alle critical findings geremedieerd. Het project resulteerde in een score van 95/100 voor de opdracht.</p>
+                        <p>Deze ervaring heeft mijn interesse in offensive security versterkt en vormt de basis voor mijn carriére ambitie als security consultant.</p>
+                        <p class="mt-3">
+                            <a href="assets/files/security-audit-report.pdf" class="btn btn-primary-custom me-2">Download Rapport (Redacted)</a>
+                            <a href="assets/files/remediation-guide.pdf" class="btn btn-outline-primary-custom">Remediation Guide</a>
+                        </p>
+                    </section>
+
+                    <nav class="project-navigation d-flex justify-content-between">
+                        <a href="project-vmware.html" class="nav-project">← VMware Automation</a>
+                        <a href="project.html" class="nav-project">Payout Service →</a>
+                    </nav>
+                </article>
+
+                <aside class="col-md-3">
+                    <section class="contact-sidebar p-4 bg-light rounded">
+                        <h2 class="h5 text-primary-custom mb-3">Contact</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:issamkrt@gmail.com">issamkrt@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <strong>LinkedIn:</strong><br>
+                                <a href="https://linkedin.com/in/issamkirat" target="_blank" rel="noopener">linkedin.com/in/issamkirat</a>
+                            </li>
+                        </ul>
+                        <nav class="social-icons mt-3">
+                            <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                            <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                            <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                        </nav>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-6 mb-3 mb-md-0">
+                    <h3 class="h5 text-primary-custom">Contact</h3>
+                    <p class="mb-1">issamkrt@gmail.com</p>
+                    <p class="mb-2">linkedin.com/in/issamkirat</p>
+                    <nav class="social-icons">
+                        <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                        <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                    </nav>
+                </section>
+                <section class="col-md-6">
+                    <h3 class="h5 text-primary-custom">Over deze site</h3>
+                    <p class="mb-0">© 2025 Issam Kirat</p>
+                </section>
+            </div>
+            <hr class="my-3">
+            <p class="text-center mb-0">© 2025 Issam Kirat. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

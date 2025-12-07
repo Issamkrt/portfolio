@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website - Issam Kirat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">Issam Kirat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-9">
+                    <a href="portfolio.html" class="back-link">← Terug naar portfolio</a>
+
+                    <header class="mb-4">
+                        <h1 class="project-detail-title">Portfolio Website (Deze Site!)</h1>
+                        <dl class="project-meta row">
+                            <dt class="col-sm-3">Datum:</dt>
+                            <dd class="col-sm-9">December 2024</dd>
+                            <dt class="col-sm-3">Categorie:</dt>
+                            <dd class="col-sm-9">Web Development</dd>
+                            <dt class="col-sm-3">Status:</dt>
+                            <dd class="col-sm-9">Live</dd>
+                        </dl>
+                    </header>
+
+                    <figure class="project-detail-image mb-4">
+                        <img src="assets/images/project-4-hero.jpg" alt="Portfolio Website Design" class="img-fluid rounded">
+                    </figure>
+
+                    <section class="project-section">
+                        <h2>Over dit project</h2>
+                        <p>Deze portfolio website is gebouwd om mijn werk en vaardigheden te presenteren aan potentiële werkgevers en opdrachtgevers. Het project was een uitstekende oefening in modern web development met focus op responsive design, semantic HTML en accessibility.</p>
+                        <p>De site is volledig responsive en werkt naadloos op alle devices, van smartphones tot desktop computers. Door gebruik te maken van Bootstrap 5 kon ik snel een professioneel design realiseren zonder veel custom CSS te schrijven.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Design Principes</h2>
+                        <p>Bij het ontwerp van deze site heb ik me gefocust op de volgende principes:</p>
+                        <ul>
+                            <li><strong>Semantic HTML:</strong> Gebruik van correcte HTML5 elementen (article, section, nav, aside) voor betere SEO en accessibility</li>
+                            <li><strong>Mobile-First:</strong> Ontwerp begint bij kleine schermen en schaalt op naar grotere displays</li>
+                            <li><strong>Performance:</strong> Minimale JavaScript, optimized images, en gebruik van CDN voor frameworks</li>
+                            <li><strong>Accessibility:</strong> Proper heading hierarchy, alt teksten, ARIA labels waar nodig</li>
+                            <li><strong>Clean Code:</strong> Geen onnodige divs, maximaal gebruik van Bootstrap utilities</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Gebruikte Technologieën</h2>
+                        <ul class="tech-tags list-unstyled d-flex flex-wrap gap-2">
+                            <li class="tech-tag">HTML5</li>
+                            <li class="tech-tag">CSS3</li>
+                            <li class="tech-tag">Bootstrap 5</li>
+                            <li class="tech-tag">JavaScript</li>
+                            <li class="tech-tag">Formspree</li>
+                            <li class="tech-tag">Git</li>
+                            <li class="tech-tag">GitHub Pages</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Structuur</h2>
+                        <p>De website bestaat uit vijf hoofdpagina's:</p>
+                        <ul>
+                            <li><strong>Home:</strong> Introductie met hero section, uitgelichte projecten, vaardigheden en call-to-action</li>
+                            <li><strong>Portfolio:</strong> Overzicht van alle projecten in een responsive grid layout</li>
+                            <li><strong>Project Details:</strong> Individuele pagina's per project met uitgebreide informatie</li>
+                            <li><strong>Contact:</strong> Contactformulier (Formspree integration) en contactgegevens</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technische Implementatie</h2>
+                        <p><strong>Responsive Grid:</strong> Bootstrap's grid systeem zorgt voor perfecte layouts op alle schermformaten. Project cards gebruiken <code>col-12 col-sm-6 col-md-4</code> voor 1, 2 of 3 kolommen afhankelijk van viewport width.</p>
+                        <p><strong>Formulier Integratie:</strong> Het contact formulier gebruikt Formspree voor server-side processing zonder eigen backend nodig te hebben. Dit houdt de site statisch en snel.</p>
+                        <p><strong>Navigation:</strong> Mobile hamburger menu met Bootstrap's collapse component, automatisch actieve state highlighting op basis van huidige pagina.</p>
+                        <p><strong>Custom Styling:</strong> Minimale custom CSS beperkt tot color scheme, custom button styles, en enkele layout tweaks. Alles wat Bootstrap kan, wordt via Bootstrap gedaan.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Color Scheme</h2>
+                        <p>De gekozen kleuren zijn gebaseerd op een oranje-blauw palette:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <span class="badge me-2" style="background-color: #F24F13; width: 40px; height: 20px;"></span>
+                                <strong>Primary:</strong> #F24F13 - Gebruikt voor headings, buttons en accenten
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge me-2" style="background-color: #F26430; width: 40px; height: 20px;"></span>
+                                <strong>Primary Light:</strong> #F26430 - Hover states
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge me-2" style="background-color: #113743; width: 40px; height: 20px;"></span>
+                                <strong>Text Dark:</strong> #113743 - Body tekst
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge me-2" style="background-color: #587e8c; width: 40px; height: 20px;"></span>
+                                <strong>Text Muted:</strong> #587e8c - Secondary tekst
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Uitdagingen & Oplossingen</h2>
+                        <p><strong>Semantic HTML vs Divitis:</strong> In het begin gebruikte ik te veel divs. Door bewust te kiezen voor article, section, nav en aside werd de HTML cleaner en betekenisvoller.</p>
+                        <p><strong>Bootstrap Overrides:</strong> Ik wilde custom kleuren maar Bootstrap's default stijlen overschrijven was tricky. Opgelost door CSS custom properties te gebruiken en specifieke classes zoals .btn-primary-custom.</p>
+                        <p><strong>Form Handling:</strong> Zonder backend was form processing een uitdaging. Formspree bood een elegante oplossing zonder complexiteit.</p>
+                        <p><strong>Image Placeholders:</strong> Nog geen echte project screenshots. Momenteel gebruiken project cards placeholder images, deze worden vervangen zodra projecten live gaan.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Best Practices</h2>
+                        <p>Tijdens dit project heb ik enkele belangrijke web development best practices toegepast:</p>
+                        <ul>
+                            <li>Gebruik van semantic HTML5 elementen i.p.v. generieke divs</li>
+                            <li>Proper heading hierarchy (h1 → h2 → h3) voor accessibility</li>
+                            <li>Alt teksten op alle images</li>
+                            <li>ARIA labels op social media links</li>
+                            <li>rel="noopener" op externe links voor security</li>
+                            <li>Consistent gebruik van Bootstrap utilities i.p.v. custom CSS</li>
+                            <li>Mobile-first responsive design</li>
+                            <li>Fast loading door gebruik van CDN en minimal custom code</li>
+                        </ul>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Screenshots</h2>
+                        <div class="row g-3">
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-4-screen1.jpg" alt="Homepage desktop view" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Homepage - Desktop View</figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="assets/images/project-4-screen2.jpg" alt="Portfolio page mobile view" class="img-fluid rounded">
+                                <figcaption class="text-center mt-2">Portfolio Page - Mobile View</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Resultaat</h2>
+                        <p>De website is live en volledig functioneel. Het design is clean, professional en laat mijn projecten goed tot hun recht komen. De site scoort uitstekend op Google Lighthouse met hoge scores voor Performance, Accessibility en SEO.</p>
+                        <p>Future improvements die ik nog wil implementeren zijn: dark mode toggle, project filtering op technologie, een blog sectie voor technische artikelen, en animaties bij scroll events.</p>
+                        <p class="mt-3">
+                            <a href="index.html" class="btn btn-primary-custom me-2">Bekijk Live Site</a>
+                            <a href="https://github.com/issamkrt/portfolio" class="btn btn-outline-primary-custom" target="_blank" rel="noopener">GitHub Repository</a>
+                        </p>
+                    </section>
+
+                    <nav class="project-navigation d-flex justify-content-between">
+                        <a href="project-backup.html" class="nav-project">← Backup Script</a>
+                        <a href="project-vmware.html" class="nav-project">VMware Automation →</a>
+                    </nav>
+                </article>
+
+                <aside class="col-md-3">
+                    <section class="contact-sidebar p-4 bg-light rounded">
+                        <h2 class="h5 text-primary-custom mb-3">Contact</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:issamkrt@gmail.com">issamkrt@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <strong>LinkedIn:</strong><br>
+                                <a href="https://linkedin.com/in/issamkirat" target="_blank" rel="noopener">linkedin.com/in/issamkirat</a>
+                            </li>
+                        </ul>
+                        <nav class="social-icons mt-3">
+                            <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                            <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                            <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                        </nav>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-6 mb-3 mb-md-0">
+                    <h3 class="h5 text-primary-custom">Contact</h3>
+                    <p class="mb-1">issamkrt@gmail.com</p>
+                    <p class="mb-2">linkedin.com/in/issamkirat</p>
+                    <nav class="social-icons">
+                        <a href="https://github.com/issamkrt" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
+                        <a href="https://instagram.com/issamkrt" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://twitter.com/issamkrt" aria-label="Twitter" target="_blank" rel="noopener">X</a>
+                    </nav>
+                </section>
+                <section class="col-md-6">
+                    <h3 class="h5 text-primary-custom">Over deze site</h3>
+                    <p class="mb-0">© 2025 Issam Kirat</p>
+                </section>
+            </div>
+            <hr class="my-3">
+            <p class="text-center mb-0">© 2025 Issam Kirat. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
